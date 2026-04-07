@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ติวเข้ม พ.ร.บ.มาตรฐานทางจริยธรรม พ.ศ. 2562</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&family=Sarabun:wght@300;400;500;600;700;800&family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C8A65D;
+  --gold-light: #E8D5A3;
+  --gold-dark: #8B6914;
+  --navy: #1B2A4A;
+  --navy-deep: #0F1A30;
+  --navy-light: #2A3F6A;
+  --cream: #FDF8F0;
+  --cream-dark: #F0E6D4;
+  --red: #C4393B;
+  --red-light: #E85D5F;
+  --green: #2D8F5C;
+  --green-light: #4DB87A;
+  --text: #2C2C2C;
+  --text-light: #666;
+  --shadow-sm: 0 2px 8px rgba(27,42,74,0.08);
+  --shadow-md: 0 4px 20px rgba(27,42,74,0.12);
+  --shadow-lg: 0 8px 40px rgba(27,42,74,0.16);
+  --radius: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Sarabun', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 17px;
+  overflow-x: hidden;
+}
+
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 40%, var(--navy-light) 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(200,166,93,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(200,166,93,0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(200,166,93,0.08) 0%, transparent 50%);
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) 51px),
+    repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) 51px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  animation: heroFadeIn 1.2s ease-out;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  background: rgba(200,166,93,0.15);
+  border: 1px solid rgba(200,166,93,0.3);
+  border-radius: 100px;
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  animation: heroFadeIn 1.2s ease-out 0.2s both;
+}
+
+.hero-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  animation: heroFadeIn 1.2s ease-out 0.4s both;
+}
+
+.hero-title .gold { color: var(--gold); }
+
+.hero-subtitle {
+  font-family: 'Kanit', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+  margin-bottom: 2rem;
+  animation: heroFadeIn 1.2s ease-out 0.6s both;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: heroFadeIn 1.2s ease-out 0.8s both;
+}
+
+.hero-meta-item {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+}
+
+.hero-meta-item strong {
+  color: var(--gold-light);
+  display: block;
+  font-size: 1.1rem;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  color: rgba(255,255,255,0.3);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* === NAVIGATION === */
+.nav-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(27,42,74,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200,166,93,0.2);
+  padding: 0;
+  overflow-x: auto;
+}
+
+.nav-inner {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 0;
+}
+
+.nav-link {
+  padding: 1rem 1.5rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.3s;
+  border-bottom: 2px solid transparent;
+  font-family: 'Kanit', sans-serif;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  background: rgba(200,166,93,0.05);
+}
+
+/* === MAIN CONTENT === */
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* === SECTION === */
+.section {
+  padding: 5rem 0 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-number {
+  font-family: 'Kanit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.section-lead {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 2;
+  max-width: 750px;
+}
+
+/* === CARDS === */
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-navy {
+  background: var(--navy);
+  color: #fff;
+}
+
+.card-navy .card-title { color: var(--gold-light); }
+.card-navy p { color: rgba(255,255,255,0.8); }
+
+.card-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: #fff;
+}
+
+.card-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.icon-gold { background: rgba(200,166,93,0.15); }
+.icon-red { background: rgba(196,57,59,0.1); }
+.icon-green { background: rgba(45,143,92,0.1); }
+.icon-navy { background: rgba(27,42,74,0.08); }
+
+/* === 7 STANDARDS GRID === */
+.standards-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.standard-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--gold);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.standard-item:hover {
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--navy);
+  transform: translateX(4px);
+}
+
+.standard-item.expanded .standard-detail { display: block; }
+
+.standard-num {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.standard-content { flex: 1; }
+
+.standard-name {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.standard-short {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.standard-detail {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.standard-detail .example {
+  background: rgba(45,143,92,0.06);
+  border-left: 3px solid var(--green);
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+}
+
+.standard-detail .warning {
+  background: rgba(196,57,59,0.06);
+  border-left: 3px solid var(--red);
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+}
+
+/* === TABLES === */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+thead th {
+  background: var(--navy);
+  color: var(--gold-light);
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+tbody td {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  vertical-align: top;
+}
+
+tbody tr:hover { background: rgba(200,166,93,0.04); }
+
+tbody tr:last-child td { border-bottom: none; }
+
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tag-yes { background: rgba(45,143,92,0.1); color: var(--green); }
+.tag-no { background: rgba(196,57,59,0.1); color: var(--red); }
+
+/* === PITFALL CARDS === */
+.pitfall {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(196,57,59,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.pitfall::before {
+  content: '⚠';
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  font-size: 5rem;
+  opacity: 0.05;
+}
+
+.pitfall-num {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 12px;
+  border-radius: 100px;
+  margin-bottom: 0.8rem;
+}
+
+.pitfall-title {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+}
+
+.pitfall-tip {
+  background: rgba(45,143,92,0.06);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.pitfall-tip strong {
+  color: var(--green);
+  font-family: 'Kanit', sans-serif;
+}
+
+/* === MNEMONIC === */
+.mnemonic {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  text-align: center;
+  color: #fff;
+}
+
+.mnemonic-label {
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.mnemonic-text {
+  font-family: 'Kanit', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.mnemonic-text .highlight {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: rgba(200,166,93,0.3);
+  text-underline-offset: 4px;
+}
+
+/* === NUMBERS SECTION === */
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.number-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.number-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.number-value {
+  font-family: 'Kanit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.number-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.3rem;
+}
+
+.number-reason {
+  font-size: 0.8rem;
+  color: var(--gold-dark);
+  background: rgba(200,166,93,0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  display: inline-block;
+}
+
+/* === STRUCTURE DIAGRAM === */
+.structure-box {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin: 2rem 0;
+}
+
+.structure-header {
+  background: var(--navy);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.structure-header h3 {
+  font-family: 'Kanit', sans-serif;
+  color: var(--gold);
+  font-size: 1.3rem;
+}
+
+.structure-header p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+.structure-body { padding: 2rem; }
+
+.structure-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.structure-row:hover { background: rgba(200,166,93,0.06); }
+
+.structure-role {
+  min-width: 140px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.9rem;
+}
+
+.structure-who {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.structure-count {
+  background: var(--navy);
+  color: var(--gold);
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 4px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* === QUIZ BUTTON === */
+.quiz-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 1rem 0;
+}
+
+.quiz-toggle:hover {
+  background: var(--gold-dark);
+  transform: scale(1.03);
+}
+
+/* === FOOTER === */
+.footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin-top: 4rem;
+  font-size: 0.85rem;
+}
+
+.footer strong { color: var(--gold); }
+
+/* === DIVIDER === */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,166,93,0.3), transparent);
+  margin: 3rem 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hero-meta { gap: 1rem; }
+  .nav-link { padding: 0.8rem 1rem; font-size: 0.8rem; }
+  .card { padding: 1.5rem; }
+  .structure-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .structure-role { min-width: auto; }
+  .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* === CLICK EXPAND INDICATOR === */
+.expand-hint {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+/* === FLOWCHART === */
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+.flow-item {
+  background: #fff;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  max-width: 400px;
+  width: 100%;
+}
+
+.flow-arrow {
+  color: var(--gold);
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.3rem 0;
+}
+
+.flow-item.highlight-flow {
+  background: var(--navy);
+  color: var(--gold);
+  border-color: var(--navy);
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">ครูผู้ช่วย ภาค ก — ข้าราชการที่ดี</div>
+    <h1 class="hero-title">
+      พ.ร.บ.มาตรฐาน<br>ทาง<span class="gold">จริยธรรม</span>
+    </h1>
+    <p class="hero-subtitle">พ.ศ. 2562 · ฉบับเข้าใจง่าย พร้อมสอบ</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <strong>3 หมวด</strong>โครงสร้างกฎหมาย
+      </div>
+      <div class="hero-meta-item">
+        <strong>7 ประการ</strong>มาตรฐานทางจริยธรรม
+      </div>
+      <div class="hero-meta-item">
+        <strong>17 เม.ย. 62</strong>วันบังคับใช้
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator" onclick="document.querySelector('.nav-sticky').scrollIntoView({behavior:'smooth'})">▼</div>
+</section>
+
+<!-- ===== NAV ===== -->
+<nav class="nav-sticky">
+  <div class="nav-inner">
+    <a href="#big-picture" class="nav-link">🎯 Big Picture</a>
+    <a href="#definitions" class="nav-link">📖 บทนิยาม</a>
+    <a href="#seven-standards" class="nav-link">⭐ มาตรฐาน 7 ข้อ</a>
+    <a href="#who-makes" class="nav-link">🏛 ผู้จัดทำ</a>
+    <a href="#committee" class="nav-link">👥 ก.ม.จ.</a>
+    <a href="#chapter3" class="nav-link">🛡 หมวด 3</a>
+    <a href="#numbers" class="nav-link">🔢 ตัวเลข</a>
+    <a href="#comparison" class="nav-link">⚖️ เปรียบเทียบ</a>
+    <a href="#pitfalls" class="nav-link">💀 จุดตาย</a>
+  </div>
+</nav>
+
+<div class="main">
+
+<!-- ===== 1. BIG PICTURE ===== -->
+<section class="section" id="big-picture">
+  <div class="section-number">ส่วนที่ 01</div>
+  <h2 class="section-title">The Big Picture<br>ปูพื้นฐาน</h2>
+  
+  <div class="card card-navy">
+    <div class="card-title">ไฟล์นี้คือเรื่องอะไร?</div>
+    <p>พ.ร.บ.มาตรฐานทางจริยธรรม พ.ศ. 2562 คือ <strong>"กติกาความดี"</strong> ที่รัฐบาลออกมาบังคับใช้กับ เจ้าหน้าที่ของรัฐทุกคน โดยกำหนดมาตรฐานกลาง 7 ข้อ ที่ทุกหน่วยงานต้องใช้เป็นเกณฑ์ขั้นต่ำ</p>
+  </div>
+
+  <div class="card">
+    <div class="card-icon icon-gold">🎓</div>
+    <div class="card-title">ทำไมครูต้องรู้?</div>
+    <p>เพราะครูคือ "เจ้าหน้าที่ของรัฐ" ตามกฎหมายฉบับนี้ ข้อสอบครูผู้ช่วยวิชา "ข้าราชการที่ดี" ออกเรื่องนี้แทบทุกปี ทั้งข้อสอบ สพฐ. รอบทั่วไป และ ภาค ก ก.พ.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-icon icon-red">🚨</div>
+    <div class="card-title">ถ้าไม่มีกฎหมายฉบับนี้?</div>
+    <p>ก่อนปี 2562 แต่ละหน่วยงานต่างคนต่างทำประมวลจริยธรรม บางที่เข้มงวด บางที่หละหลวม ครูบางคนไม่เข้าสอน ไปเล่นมือถือทั้งวัน แต่ไม่มีเกณฑ์ชัดเจนว่าผิดจริยธรรมข้อไหน กฎหมายนี้จึงมาเป็น <strong>"มาตรฐานกลาง"</strong> ที่ทุกหน่วยงานต้องใช้เหมือนกัน</p>
+  </div>
+
+  <div class="card">
+    <div class="card-icon icon-navy">📜</div>
+    <div class="card-title">ที่มาทางรัฐธรรมนูญ</div>
+    <p>รัฐธรรมนูญ พ.ศ. 2560 <strong>มาตรา 76 วรรคสาม</strong> สั่งไว้ว่า "รัฐพึงจัดให้มีมาตรฐานทางจริยธรรม เพื่อให้หน่วยงานของรัฐใช้เป็นหลักในการกำหนดประมวลจริยธรรม" จึงต้องออกกฎหมายนี้มารองรับ</p>
+  </div>
+
+  <div class="flow">
+    <div class="flow-item">รัฐธรรมนูญ 2560 ม.76 ว.3 สั่งให้จัดทำ</div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-item highlight-flow">พ.ร.บ.มาตรฐานทางจริยธรรม 2562</div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-item">ประมวลจริยธรรมของแต่ละหน่วยงาน</div>
+  </div>
+
+  <div class="card" style="background: var(--cream-dark); border: 1px dashed var(--gold);">
+    <div class="card-title">🗂 โครงสร้าง 3 หมวด</div>
+    <p><strong>หมวด 1:</strong> มาตรฐานทางจริยธรรมและประมวลจริยธรรม (มาตรฐาน 7 ข้อ + ใครทำประมวล)<br>
+    <strong>หมวด 2:</strong> คณะกรรมการมาตรฐานทางจริยธรรม (ก.ม.จ.)<br>
+    <strong>หมวด 3:</strong> การรักษาจริยธรรมของเจ้าหน้าที่ของรัฐ</p>
+    <br>
+    <p>📌 <strong>ผู้รักษาการ:</strong> นายกรัฐมนตรี &nbsp;|&nbsp; <strong>ผู้รับสนอง:</strong> พลเอก ประยุทธ์ จันทร์โอชา &nbsp;|&nbsp; <strong>บังคับใช้:</strong> 17 เม.ย. 2562</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 2. DEFINITIONS ===== -->
+<section class="section" id="definitions">
+  <div class="section-number">ส่วนที่ 02</div>
+  <h2 class="section-title">บทนิยาม<br>คำศัพท์สำคัญ</h2>
+  <p class="section-lead">จุดออกสอบหนักมาก! ต้องแยกให้ได้ว่าหน่วยงานไหนอยู่ใน พ.ร.บ.นี้ หน่วยงานไหนไม่อยู่</p>
+
+  <div class="card card-navy">
+    <div class="card-title">🔑 คีย์เวิร์ดหลัก: "ฝ่ายบริหาร" เท่านั้น!</div>
+    <p>พ.ร.บ.นี้คุมแค่หน่วยงานใน "ฝ่ายบริหาร" ส่วนฝ่ายนิติบัญญัติ ฝ่ายตุลาการ และองค์กรอิสระ มีกฎหมายจริยธรรมของตัวเองแยกต่างหาก</p>
+  </div>
+
+  <h3 style="font-family:'Kanit'; margin: 2rem 0 1rem; font-size: 1.2rem; color: var(--navy);">📋 "หน่วยงานของรัฐ" ตาม พ.ร.บ.นี้</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>หน่วยงาน</th><th>สถานะ</th><th>เหตุผล</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>กระทรวงศึกษาธิการ</td><td><span class="tag tag-yes">✅ ใช่</span></td><td>กระทรวง = ฝ่ายบริหาร</td></tr>
+        <tr><td>สพฐ.</td><td><span class="tag tag-yes">✅ ใช่</span></td><td>ส่วนราชการมีฐานะเป็นกรม</td></tr>
+        <tr><td>สำนักงานปลัดกระทรวง</td><td><span class="tag tag-yes">✅ ใช่</span></td><td>ฝ่ายบริหาร</td></tr>
+        <tr><td>อบต. / เทศบาล / เมืองพัทยา</td><td><span class="tag tag-yes">✅ ใช่</span></td><td>ราชการส่วนท้องถิ่น</td></tr>
+        <tr><td>รัฐวิสาหกิจ / องค์การมหาชน</td><td><span class="tag tag-yes">✅ ใช่</span></td><td>ระบุไว้ชัดเจนในกฎหมาย</td></tr>
+        <tr style="background: rgba(196,57,59,0.03);"><td>สำนักงาน กกต.</td><td><span class="tag tag-no">❌ ไม่ใช่</span></td><td>องค์กรอิสระ</td></tr>
+        <tr style="background: rgba(196,57,59,0.03);"><td>ผู้ตรวจการแผ่นดิน</td><td><span class="tag tag-no">❌ ไม่ใช่</span></td><td>องค์กรอิสระ</td></tr>
+        <tr style="background: rgba(196,57,59,0.03);"><td>ค.ต.ง. / ป.ป.ช. / กสม.</td><td><span class="tag tag-no">❌ ไม่ใช่</span></td><td>องค์กรอิสระ</td></tr>
+        <tr style="background: rgba(196,57,59,0.03);"><td>สำนักงานศาลยุติธรรม / ศาลปกครอง</td><td><span class="tag tag-no">❌ ไม่ใช่</span></td><td>ฝ่ายตุลาการ</td></tr>
+        <tr style="background: rgba(196,57,59,0.03);"><td>ศาลรัฐธรรมนูญ</td><td><span class="tag tag-no">❌ ไม่ใช่</span></td><td>ฝ่ายตุลาการ</td></tr>
+        <tr style="background: rgba(196,57,59,0.03);"><td>สำนักงานอัยการสูงสุด</td><td><span class="tag tag-no">❌ ไม่ใช่</span></td><td>องค์กรอัยการ</td></tr>
+        <tr style="background: rgba(196,57,59,0.03);"><td>สำนักงานเลขาธิการวุฒิสภา</td><td><span class="tag tag-no">❌ ไม่ใช่</span></td><td>ฝ่ายนิติบัญญัติ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-label">⚡ วิธีจำ</div>
+    <div class="mnemonic-text">เห็น <span class="highlight">ศาล</span> · <span class="highlight">อิสระ</span> · <span class="highlight">อัยการ</span> · <span class="highlight">รัฐสภา</span><br>= ❌ ไม่ใช่หน่วยงานของรัฐตาม พ.ร.บ.นี้</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">"เจ้าหน้าที่ของรัฐ" หมายถึง</div>
+    <p><strong>ข้าราชการ + พนักงาน + ลูกจ้าง + ผู้ปฏิบัติงานอื่น</strong> ใน "หน่วยงานของรัฐ" ตามนิยามข้างบน</p>
+    <br>
+    <p>ดังนั้น ข้าราชการสังกัดศาลปกครอง ❌ <strong>ไม่ใช่</strong> "เจ้าหน้าที่ของรัฐ" ตาม พ.ร.บ.นี้</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 3. SEVEN STANDARDS ===== -->
+<section class="section" id="seven-standards">
+  <div class="section-number">ส่วนที่ 03</div>
+  <h2 class="section-title">มาตรฐานทางจริยธรรม<br>7 ประการ</h2>
+  <p class="section-lead">หัวใจของ พ.ร.บ. — ออกสอบหนักที่สุด ทั้งถามตรงและถามผ่านสถานการณ์จำลอง คลิกแต่ละข้อเพื่อดูตัวอย่างและจุดออกสอบ</p>
+
+  <div class="mnemonic">
+    <div class="mnemonic-label">🧠 สูตรท่องจำ</div>
+    <div class="mnemonic-text">
+      <span class="highlight">ยึด</span>มั่น · <span class="highlight">ซื่อ</span>สัตย์ · <span class="highlight">กล้า</span>ตัดสิน · <span class="highlight">คิด</span>ส่วนรวม<br>
+      <span class="highlight">มุ่ง</span>สัมฤทธิ์ · เป็น<span class="highlight">ธรรม</span> · <span class="highlight">ดี</span>+ภาพลักษณ์
+    </div>
+  </div>
+
+  <div class="standards-grid">
+
+    <div class="standard-item" onclick="this.classList.toggle('expanded')">
+      <div class="standard-num">1</div>
+      <div class="standard-content">
+        <div class="standard-name">ยึดมั่นในสถาบันหลักของประเทศ</div>
+        <div class="standard-short">ชาติ ศาสนา พระมหากษัตริย์ และการปกครองระบอบประชาธิปไตยฯ</div>
+        <div class="expand-hint">▸ คลิกดูรายละเอียด</div>
+        <div class="standard-detail">
+          <div class="example">✅ ครูดำไปใช้สิทธิเลือกตั้ง ส.ส. ทุกครั้ง</div>
+          <div class="example">✅ สมใจยึดมั่นในระบอบประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="standard-item" onclick="this.classList.toggle('expanded')">
+      <div class="standard-num">2</div>
+      <div class="standard-content">
+        <div class="standard-name">ซื่อสัตย์สุจริต มีจิตสำนึกที่ดี และรับผิดชอบต่อหน้าที่</div>
+        <div class="standard-short">ไม่โกง ไม่ละทิ้งหน้าที่ รู้ผิดก็แก้ไข</div>
+        <div class="expand-hint">▸ คลิกดูรายละเอียด</div>
+        <div class="standard-detail">
+          <div class="example">✅ ปฏิเสธสินบนจากบริษัทที่มาขอเซ็นอนุมัติก่อสร้าง</div>
+          <div class="example">✅ ชี้แจงผู้เกี่ยวข้องเมื่อรู้ว่าตัวเองผิดพลาด แล้วรีบแก้ไข</div>
+          <div class="warning">⚠️ ครูนก ไม่เข้าประชุมแต่ให้เพื่อนลงชื่อแทน = <strong>ทอดทิ้งราชการ + ขาดข้อ 2</strong></div>
+          <div class="warning">⚠️ ครูมด มาลงชื่อแต่ไม่สอน เล่นโซเชียลทั้งวัน = <strong>ทอดทิ้งราชการ + ขาดข้อ 2</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="standard-item" onclick="this.classList.toggle('expanded')">
+      <div class="standard-num">3</div>
+      <div class="standard-content">
+        <div class="standard-name">กล้าตัดสินใจและกระทำในสิ่งที่ถูกต้องชอบธรรม</div>
+        <div class="standard-short">เห็นทุจริตก็กล้ารายงาน ไม่เพิกเฉย</div>
+        <div class="expand-hint">▸ คลิกดูรายละเอียด</div>
+        <div class="standard-detail">
+          <div class="example">✅ กล้านำเสนอ เปิดเผย หรือรายงานเมื่อพบเห็นการกระทำผิด การทุจริต</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="standard-item" onclick="this.classList.toggle('expanded')">
+      <div class="standard-num">4</div>
+      <div class="standard-content">
+        <div class="standard-name">คิดถึงประโยชน์ส่วนรวมมากกว่าประโยชน์ส่วนตัว และมีจิตสาธารณะ</div>
+        <div class="standard-short">ไม่เอาผลประโยชน์ส่วนตัวมาก่อน</div>
+        <div class="expand-hint">▸ คลิกดูรายละเอียด</div>
+        <div class="standard-detail">
+          <div class="example">✅ ทำกิจกรรมอาสาพัฒนาชุมชนเป็นประจำทุกสัปดาห์</div>
+          <div class="example">✅ สั่งซื้ออุปกรณ์ตามราคากลางกรมบัญชีกลาง ไม่เอาส่วนต่าง</div>
+          <div class="warning">⚠️ ครูแมวสั่งซื้อพัสดุสูงกว่าราคากลาง 50% = <strong>ขาดข้อ 4</strong> (ไม่ใช่ข้อ 2!)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="standard-item" onclick="this.classList.toggle('expanded')">
+      <div class="standard-num">5</div>
+      <div class="standard-content">
+        <div class="standard-name">มุ่งผลสัมฤทธิ์ของงาน</div>
+        <div class="standard-short">พัฒนาตนเอง พัฒนาสื่อนวัตกรรม ทำงานเป็นทีม</div>
+        <div class="expand-hint">▸ คลิกดูรายละเอียด</div>
+        <div class="standard-detail">
+          <div class="example">✅ ครูบอยเป็นผู้นำแห่งการเปลี่ยนแปลง ริเริ่มพัฒนานวัตกรรมการสอน มุ่งผลลัพธ์ของผู้เรียน</div>
+          <div class="warning">⚠️ โจทย์หลอกว่า "มุ่งผลสัมฤทธิ์ของงาน<strong>และของตน</strong>" → ผิด! ต้องเป็น "ของงาน" เท่านั้น</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="standard-item" onclick="this.classList.toggle('expanded')">
+      <div class="standard-num">6</div>
+      <div class="standard-content">
+        <div class="standard-name">ปฏิบัติหน้าที่อย่างเป็นธรรมและไม่เลือกปฏิบัติ</div>
+        <div class="standard-short">เที่ยงธรรม เสมอภาค ปราศจากอคติ</div>
+        <div class="expand-hint">▸ คลิกดูรายละเอียด</div>
+        <div class="standard-detail">
+          <div class="example">✅ ปฏิบัติต่อนักเรียนทุกคนเท่าเทียม ไม่ลำเอียง</div>
+          <div class="example">✅ สมหญิงลงโทษนักเรียนที่หนีเรียนตามระเบียบว่าด้วยการลงโทษฯ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="standard-item" onclick="this.classList.toggle('expanded')">
+      <div class="standard-num">7</div>
+      <div class="standard-content">
+        <div class="standard-name">ดำรงตนเป็นแบบอย่างที่ดีและรักษาภาพลักษณ์ของทางราชการ</div>
+        <div class="standard-short">แต่งกายถูกระเบียบ ประพฤติเหมาะสมกับตำแหน่ง</div>
+        <div class="expand-hint">▸ คลิกดูรายละเอียด</div>
+        <div class="standard-detail">
+          <div class="example">✅ ครูหนึ่งแต่งกายถูกต้องตามระเบียบราชการ ติดเครื่องหมายและแพรแถบถูกต้อง</div>
+          <div class="warning">⚠️ โจทย์หลอกว่า "รักษาภาพพจน์<strong>ของตัวเอง</strong>" → ผิด! ต้องเป็นภาพลักษณ์ "ของทางราชการ"</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 4. WHO MAKES ===== -->
+<section class="section" id="who-makes">
+  <div class="section-number">ส่วนที่ 04</div>
+  <h2 class="section-title">ใครเป็นคนทำ<br>ประมวลจริยธรรม?</h2>
+
+  <h3 style="font-family:'Kanit'; margin: 1rem 0; color: var(--navy);">กรณีมีองค์กรกลางบริหารงานบุคคล</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ประเภทข้าราชการ</th><th>ผู้จัดทำประมวลจริยธรรม</th></tr></thead>
+      <tbody>
+        <tr><td>ข้าราชการพลเรือน</td><td><strong>ก.พ.</strong></td></tr>
+        <tr><td>ข้าราชการในอุดมศึกษา</td><td><strong>ก.พ.อ.</strong></td></tr>
+        <tr style="background: rgba(200,166,93,0.08);"><td>⭐ ข้าราชการครูและบุคลากรทางการศึกษา</td><td><strong>ก.ค.ศ.</strong> (ไม่ใช่คุรุสภา!)</td></tr>
+        <tr><td>ข้าราชการตำรวจ</td><td><strong>ก.ตร.</strong></td></tr>
+        <tr><td>ข้าราชการ กทม.</td><td><strong>ก.ก.</strong></td></tr>
+        <tr><td>ข้าราชการส่วนท้องถิ่น</td><td><strong>ก.ถ.</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Kanit'; margin: 2rem 0 1rem; color: var(--navy);">กรณีไม่มีองค์กรกลางบริหารงานบุคคล</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ประเภท</th><th>ผู้จัดทำ</th></tr></thead>
+      <tbody>
+        <tr><td>ข้าราชการการเมือง</td><td><strong>คณะรัฐมนตรี</strong></td></tr>
+        <tr><td>ข้าราชการทหาร + พลเรือนกลาโหม</td><td><strong>สภากลาโหม</strong></td></tr>
+        <tr><td>ผู้บริหาร/พนักงานรัฐวิสาหกิจ</td><td><strong>สำนักงาน คกก.นโยบายรัฐวิสาหกิจ (ส.ค.ร.)</strong></td></tr>
+        <tr><td>ผู้บริหาร/เจ้าหน้าที่องค์การมหาชน</td><td><strong>คกก.พัฒนาและส่งเสริมองค์การมหาชน</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-label">❓ ถ้ามีปัญหาว่าใครเป็นคนทำ?</div>
+    <div class="mnemonic-text"><span class="highlight">ก.ม.จ.</span> เป็นผู้มีอำนาจวินิจฉัย</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 5. COMMITTEE ===== -->
+<section class="section" id="committee">
+  <div class="section-number">ส่วนที่ 05</div>
+  <h2 class="section-title">คณะกรรมการมาตรฐาน<br>ทางจริยธรรม (ก.ม.จ.)</h2>
+
+  <div class="structure-box">
+    <div class="structure-header">
+      <h3>โครงสร้าง ก.ม.จ.</h3>
+      <p>คณะกรรมการมาตรฐานทางจริยธรรม</p>
+    </div>
+    <div class="structure-body">
+      <div class="structure-row" style="background: rgba(200,166,93,0.08);">
+        <div class="structure-role">👑 ประธาน</div>
+        <div class="structure-who">นายกรัฐมนตรี หรือ รองนายกฯ ที่ได้รับมอบหมาย</div>
+        <div class="structure-count">1 คน</div>
+      </div>
+      <div class="structure-row" style="background: rgba(200,166,93,0.05);">
+        <div class="structure-role">🥈 รองประธาน</div>
+        <div class="structure-who">ผู้แทน ก.พ. ที่ได้รับมอบหมาย</div>
+        <div class="structure-count">1 คน</div>
+      </div>
+      <div class="structure-row">
+        <div class="structure-role">📋 โดยตำแหน่ง</div>
+        <div class="structure-who">ผู้แทน ก.พ.อ. / ก.ค.ศ. / ก.ตร. / ก.ถ. / สภากลาโหม</div>
+        <div class="structure-count">5 คน</div>
+      </div>
+      <div class="structure-row">
+        <div class="structure-role">🎓 ผู้ทรงคุณวุฒิ</div>
+        <div class="structure-who">นายกฯ แต่งตั้ง · สัญชาติไทย · อายุ ≥ 45 ปี · วาระ 3 ปี ไม่เกิน 2 วาระ</div>
+        <div class="structure-count">≤ 5 คน</div>
+      </div>
+      <div class="structure-row" style="background: rgba(200,166,93,0.05);">
+        <div class="structure-role">✍️ เลขานุการ</div>
+        <div class="structure-who">เลขาธิการ ก.พ.</div>
+        <div class="structure-count">1 คน</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-left: 4px solid var(--red);">
+    <div class="card-title" style="color: var(--red);">⚠️ จุดสังเกตสำคัญ</div>
+    <p>กรรมการโดยตำแหน่ง <strong>ไม่มี ก.พ.</strong> (เพราะ ก.พ. ไปเป็นรองประธานแล้ว) และ <strong>ไม่มี ก.ก.</strong> (ข้าราชการ กทม.)</p>
+    <br>
+    <p><strong>งานธุรการ ก.ม.จ.:</strong> สำนักงาน ก.พ. (ไม่ใช่สำนักนายกรัฐมนตรี!)</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">หน้าที่สำคัญของ ก.ม.จ.</div>
+    <p>
+      (1) เสนอแนะนโยบาย/ยุทธศาสตร์ต่อ ครม.<br>
+      (2) กำหนดแนวทางขับเคลื่อน<br>
+      (3) ส่งเสริมและพัฒนา<br>
+      (4) กำกับ ติดตาม ประเมินผล<br>
+      (5) ตรวจสอบรายงานประจำปี → รายงาน ครม. อย่างน้อยปีละ 1 ครั้ง<br>
+      (6) ตีความและวินิจฉัยปัญหา<br>
+      (7) ปฏิบัติหน้าที่อื่นตามที่บัญญัติหรือ ครม. มอบหมาย
+    </p>
+    <br>
+    <p style="background: rgba(200,166,93,0.1); padding: 1rem; border-radius: 10px;">
+      📌 <strong>ทบทวนมาตรฐานทางจริยธรรม ทุก 5 ปี</strong> (หรือเร็วกว่าถ้าจำเป็น)
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 6. CHAPTER 3 ===== -->
+<section class="section" id="chapter3">
+  <div class="section-number">ส่วนที่ 06</div>
+  <h2 class="section-title">หมวด 3<br>การรักษาจริยธรรม</h2>
+
+  <div class="mnemonic">
+    <div class="mnemonic-label">🧠 สูตรท่องจำ</div>
+    <div class="mnemonic-text"><span class="highlight">กำหนด</span> + <span class="highlight">ส่งเสริม</span> + <span class="highlight">รายงาน</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">หน่วยงานของรัฐต้องทำ 3 อย่าง</div>
+    <p>
+      <strong>(1) กำหนด</strong> ให้มีผู้รับผิดชอบเกี่ยวกับการรักษาจริยธรรมประจำหน่วยงาน<br><br>
+      <strong>(2) ส่งเสริม</strong> สนับสนุน ให้ความรู้ ฝึกอบรม และพัฒนาเจ้าหน้าที่ของรัฐ<br><br>
+      <strong>(3) รายงาน</strong> ทุกสิ้นปีงบประมาณ จัดทำรายงานประจำปีเสนอต่อ ก.ม.จ. (ผ่านองค์กรกลางฯ)
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">องค์กรกลางบริหารงานบุคคลแต่ละประเภท มีหน้าที่</div>
+    <p>
+      ✅ กำกับดูแลกระบวนการรักษาจริยธรรม<br>
+      ✅ ประเมินผลการปฏิบัติตามประมวลจริยธรรม<br>
+      ✅ จัดหลักสูตรฝึกอบรม เผยแพร่ความเข้าใจ<br>
+      ✅ กำหนดมาตรการจูงใจ
+    </p>
+    <br>
+    <p style="color: var(--red);"><strong>❌ แต่ไม่มีหน้าที่:</strong> กำหนดแนวทางขับเคลื่อน กำกับ ติดตาม ประเมินผลภาพรวม (นั่นเป็นหน้าที่ ก.ม.จ.)</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 7. NUMBERS ===== -->
+<section class="section" id="numbers">
+  <div class="section-number">ส่วนที่ 07</div>
+  <h2 class="section-title">The 'Why' Behind the Numbers<br>ทำไมต้องตัวเลขนี้?</h2>
+  <p class="section-lead">แทนที่จะจำแบบนกแก้ว มาเข้าใจเหตุผลเชิงตรรกะว่าทำไมเขาถึงกำหนดเป็นเลขนั้น</p>
+
+  <div class="numbers-grid">
+    <div class="number-card">
+      <div class="number-value">7</div>
+      <div class="number-label">มาตรฐานทางจริยธรรม</div>
+      <div class="number-reason">ครอบคลุมทุกมิติ ตั้งแต่จงรักภักดีถึงภาพลักษณ์</div>
+    </div>
+    <div class="number-card">
+      <div class="number-value">≤5</div>
+      <div class="number-label">ผู้ทรงคุณวุฒิ ก.ม.จ.</div>
+      <div class="number-reason">สมดุลกับกรรมการโดยตำแหน่ง 5 คน</div>
+    </div>
+    <div class="number-card">
+      <div class="number-value">45</div>
+      <div class="number-label">อายุขั้นต่ำผู้ทรงคุณวุฒิ (ปี)</div>
+      <div class="number-reason">ต้องมีประสบการณ์มากพอ</div>
+    </div>
+    <div class="number-card">
+      <div class="number-value">3</div>
+      <div class="number-label">ปี / วาระผู้ทรงคุณวุฒิ</div>
+      <div class="number-reason">ไม่เกิน 2 วาระ = สูงสุด 6 ปี</div>
+    </div>
+    <div class="number-card">
+      <div class="number-value">5</div>
+      <div class="number-label">ปี / รอบทบทวนมาตรฐาน</div>
+      <div class="number-reason">สมดุลระหว่างความมั่นคงกับการปรับตัว</div>
+    </div>
+    <div class="number-card">
+      <div class="number-value">≥1</div>
+      <div class="number-label">ครั้ง/ปี · ก.ม.จ. รายงาน ครม.</div>
+      <div class="number-reason">ขั้นต่ำของการตรวจสอบ จะทำมากกว่าก็ได้</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 8. COMPARISON ===== -->
+<section class="section" id="comparison">
+  <div class="section-number">ส่วนที่ 08</div>
+  <h2 class="section-title">Mirror-Image Comparison<br>ตารางแฝดคนละฝา</h2>
+  <p class="section-lead">จุดที่เนื้อหาคล้ายกันจนน่าสับสน พร้อมคีย์เวิร์ดแยก</p>
+
+  <h3 style="font-family:'Kanit'; margin: 2rem 0 1rem; color: var(--navy);">🔄 คำที่ถูก vs คำที่โจทย์หลอก</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>✅ คำที่ถูก (ตาม พ.ร.บ.)</th><th>❌ คำที่ผิด (โจทย์ชอบหลอก)</th></tr></thead>
+      <tbody>
+        <tr><td>มุ่งผลสัมฤทธิ์<strong>ของงาน</strong></td><td>มุ่งผลสัมฤทธิ์ของงาน<strong>และของตน</strong></td></tr>
+        <tr><td>คิดถึงประโยชน์<strong>ส่วนรวม</strong>มากกว่าส่วนตัว</td><td>คิดถึงประโยชน์<strong>ส่วนตัว</strong>มากกว่าส่วนรวม</td></tr>
+        <tr><td>รักษาภาพลักษณ์ของ<strong>ทางราชการ</strong></td><td>รักษาภาพพจน์ของ<strong>ตัวเอง</strong></td></tr>
+        <tr><td>ดำรงตนเป็นแบบอย่างที่ดี (ข้อ 7)</td><td>ดำรงตนเป็นแบบอย่างที่ดี <strong>มีจิตสาธารณะ</strong> (จิตสาธารณะอยู่ข้อ 4)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Kanit'; margin: 2rem 0 1rem; color: var(--navy);">🔄 ละทิ้ง vs ทอดทิ้ง ราชการ</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ละทิ้งราชการ</th><th>ทอดทิ้งราชการ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ไม่มาทำงานเลย</strong> (หายไปเลย)</td><td><strong>มาทำงานแต่ไม่ทำหน้าที่</strong></td></tr>
+        <tr><td>เช่น หนีไปเที่ยวไม่กลับมา</td><td>เช่น มาลงชื่อแต่ไม่สอน ไปเล่นโซเชียลทั้งวัน</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Kanit'; margin: 2rem 0 1rem; color: var(--navy);">🔄 องค์กรกลางฯ vs ก.ม.จ.</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ประเด็น</th><th>องค์กรกลางฯ (เช่น ก.ค.ศ.)</th><th>ก.ม.จ.</th></tr></thead>
+      <tbody>
+        <tr><td>บทบาทหลัก</td><td><strong>จัดทำ</strong>ประมวลจริยธรรม</td><td><strong>กำกับดูแล</strong>ภาพรวมทั้งระบบ</td></tr>
+        <tr><td>ขอบเขต</td><td>เฉพาะข้าราชการในความรับผิดชอบ</td><td>ครอบคลุมทุกประเภท</td></tr>
+        <tr><td>รายงานต่อ</td><td>เสนอผ่านไปยัง ก.ม.จ.</td><td>รายงานต่อ ครม.</td></tr>
+        <tr><td>วินิจฉัยปัญหา</td><td>❌ ไม่มีอำนาจ</td><td>✅ มีอำนาจตีความและวินิจฉัย</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-label">🔑 คีย์เวิร์ดแยก</div>
+    <div class="mnemonic-text">
+      ถามว่า "ใคร<span class="highlight">จัดทำ</span>" → องค์กรกลางฯ<br>
+      ถามว่า "ใคร<span class="highlight">วินิจฉัย</span>" → ก.ม.จ.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 9. PITFALLS ===== -->
+<section class="section" id="pitfalls">
+  <div class="section-number">ส่วนที่ 09</div>
+  <h2 class="section-title">Common Pitfalls<br>เตือนจุดตาย!</h2>
+  <p class="section-lead">จุดที่มือใหม่มักเข้าใจผิดและโดนโจทย์หลอก วิเคราะห์จากข้อสอบจริงที่ออกซ้ำทุกปี</p>
+
+  <div class="pitfall">
+    <div class="pitfall-num">กับดัก #1</div>
+    <div class="pitfall-title">"หน่วยงานของรัฐ" กับ "องค์กรอิสระ/ศาล"</div>
+    <p>โจทย์จะให้ตัวเลือกผสมระหว่างฝ่ายบริหารกับองค์กรอิสระ/ศาล เช่น "สำนักงานศาลยุติธรรม <strong>กระทรวงศึกษาธิการ</strong> ค.ต.ง." → ผิด! เพราะมีศาลและ ค.ต.ง. ปนอยู่</p>
+    <div class="pitfall-tip"><strong>💡 วิธีเอาตัวรอด:</strong> สแกนทุกตัวเลือก ถ้าเห็นชื่อศาล/อิสระ/อัยการ/รัฐสภาแม้แต่ตัวเดียว = ตัวเลือกนั้นผิดทันที</div>
+  </div>
+
+  <div class="pitfall">
+    <div class="pitfall-num">กับดัก #2</div>
+    <div class="pitfall-title">"คุรุสภา" ≠ องค์กรกลางบริหารงานบุคคลของครู</div>
+    <p>ข้อสอบชอบให้ "คุรุสภา" เป็นตัวเลือกลวง คุรุสภาดูเรื่องใบอนุญาตประกอบวิชาชีพ แต่ <strong>ก.ค.ศ.</strong> ต่างหากที่เป็นองค์กรกลางฯ และจัดทำประมวลจริยธรรม</p>
+    <div class="pitfall-tip"><strong>💡 จำว่า:</strong> คุรุสภา = ใบประกอบวิชาชีพ / ก.ค.ศ. = บริหารงานบุคคล + จริยธรรม</div>
+  </div>
+
+  <div class="pitfall">
+    <div class="pitfall-num">กับดัก #3</div>
+    <div class="pitfall-title">สับสนระหว่างมาตรฐานข้อ 2 กับข้อ 4</div>
+    <p><strong>ข้อ 2 (ซื่อสัตย์):</strong> เน้นส่วนตัว — ไม่โกง ไม่ละทิ้งหน้าที่ รู้ผิดก็แก้ไข<br>
+    <strong>ข้อ 4 (ส่วนรวม):</strong> เน้นส่วนรวม — ไม่เอาผลประโยชน์ตัวเองมาก่อน</p>
+    <div class="pitfall-tip"><strong>💡 ตัวอย่าง:</strong> ครูแมวสั่งซื้อพัสดุแพงกว่าราคากลาง 50% → ตอบข้อ 4 (ทำให้หน่วยงานเสียเงิน = ไม่คิดถึงส่วนรวม) ไม่ใช่ข้อ 2</div>
+  </div>
+
+  <div class="pitfall">
+    <div class="pitfall-num">กับดัก #4</div>
+    <div class="pitfall-title">ก.พ. vs ก.พ.ร. — สลับกันบ่อยมาก!</div>
+    <p>โจทย์สลับ ก.พ. กับ ก.พ.ร. เป็นประจำ</p>
+    <div class="pitfall-tip">
+      <strong>💡 จำว่า:</strong><br>
+      ก.พ. (ตัวเดียว) = ข้าราชการพลเรือน / เลขานุการ ก.ม.จ. / งานธุรการ ก.ม.จ.<br>
+      ก.พ.ร. = พัฒนาระบบราชการ (ไม่เกี่ยวกับ พ.ร.บ.นี้โดยตรง)
+    </div>
+  </div>
+
+  <div class="pitfall">
+    <div class="pitfall-num">กับดัก #5</div>
+    <div class="pitfall-title">พฤติกรรม "ดี" แต่ไม่ใช่มาตรฐานทางจริยธรรม</div>
+    <p>โจทย์จะให้ตัวเลือกที่ดูดีทุกข้อ แต่บางข้อไม่เข้ามาตรฐาน 7 ข้อ</p>
+    <div class="pitfall-tip">
+      <strong>💡 ตัวอย่าง:</strong><br>
+      "สมชายขับรถส่งเพื่อนครูทุกวัน" → เป็นน้ำใจ แต่ไม่ใช่มาตรฐาน 7 ข้อ<br>
+      "ขาวซื้ออาหารให้ผอ.ทุกวัน" → เอาใจนาย ไม่ใช่มาตรฐานทางจริยธรรม
+    </div>
+  </div>
+
+  <div class="pitfall">
+    <div class="pitfall-num">กับดัก #6</div>
+    <div class="pitfall-title">โจทย์แนว PISA — ต้องตอบให้ "ครบ"</div>
+    <p>ข้อสอบแนวใหม่ให้ข้อความ 6-8 ข้อ ถามว่า "ข้อใดผิด/ถูก ให้ตอบให้ครบ" ถ้าตอบไม่ครบก็ไม่ได้คะแนน</p>
+    <div class="pitfall-tip"><strong>💡 วิธีเอาตัวรอด:</strong> อ่านทุกข้อความทีละข้อ เช็กกับมาตรฐาน 7 ข้อ ทีละตัว อย่ารีบข้าม ระวังข้อที่ดูคล้ายถูกแต่สลับคำหรือเติมคำ</div>
+  </div>
+</section>
+
+<!-- ===== SUMMARY ===== -->
+<section class="section" id="summary">
+  <div class="mnemonic" style="text-align: left;">
+    <div class="mnemonic-label" style="text-align: center;">🎯 สรุปรวบยอด — จำ 3 กรอบหลัก</div>
+    <div style="font-size: 1.1rem; line-height: 2; margin-top: 1rem;">
+      <p><strong style="color: var(--gold);">กรอบ 1:</strong> พ.ร.บ.นี้คุมแค่ "ฝ่ายบริหาร" — เห็น ศาล/อิสระ/อัยการ/รัฐสภา = ไม่ใช่</p>
+      <p><strong style="color: var(--gold);">กรอบ 2:</strong> มาตรฐาน 7 ข้อ "ยึด ซื่อ กล้า คิด มุ่ง ธรรม ดี" — จำคำต่อคำ อย่าให้โจทย์เติมคำหรือสลับคำ</p>
+      <p><strong style="color: var(--gold);">กรอบ 3:</strong> ใครทำอะไร — ก.ค.ศ. ทำประมวลจริยธรรมครู / ก.ม.จ. กำกับดูแลทั้งระบบ / สำนักงาน ก.พ. ทำธุรการ ก.ม.จ.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p>สรุปติวเข้ม <strong>พ.ร.บ.มาตรฐานทางจริยธรรม พ.ศ. 2562</strong></p>
+  <p style="margin-top: 0.5rem;">เนื้อหาจากเอกสารติว "ครูผู้ช่วย By ครูพี่หนึ่ง จักรยาน" · จัดรูปแบบใหม่เพื่อการทบทวน</p>
+</div>
+
+<script>
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section').forEach(section => {
+  observer.observe(section);
+});
+
+// Active nav link
+const sections = document.querySelectorAll('.section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
